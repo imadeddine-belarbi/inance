@@ -118,9 +118,6 @@ a {
   font-size: 16px;
   margin-right: 5px;
 }
-.header__top .container p span {
-  font-size: 18px;
-}
 .header__bottom {
   background-color: var(--light-blue);
 }
