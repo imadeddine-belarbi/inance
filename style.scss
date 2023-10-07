@@ -26,6 +26,7 @@ $l-break-point: 1200px;
 
 body {
   line-height: 1.3;
+  font-family: var(--txt-font-family);
 }
 
 a {
@@ -155,6 +156,7 @@ a {
       span a {
         text-transform: uppercase;
         font-size: 25px;
+        font-weight: bold;
         color: var(--main-color);
       }
 
