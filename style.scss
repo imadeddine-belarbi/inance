@@ -11,7 +11,7 @@
   --heading-font-family: 'Merriweather Sans', sans-serif;
   --txt-font-family: 'Lato', sans-serif;
 
-  --main-padding: 40px;
+  --main-padding: 60px;
 }
 
 $sm-break-point: 768px;
@@ -74,6 +74,7 @@ a {
   border-style: solid;
   transition: .2s;
   color: var(--white);
+  border-radius: 5px;
 
   &:hover {
     background-color: transparent;
@@ -91,7 +92,6 @@ a {
   &--orange {
     background-color: var(--orange);
     border-color: var(--orange);
-    border-radius: 5px;
 
     &:hover {
       color: var(--orange);
@@ -106,7 +106,52 @@ a {
 .special-heading {
   text-transform: uppercase;
   color: black;
-  font-size: 40px;
+  font-size: 32px;
+}
+
+.special-section {
+  .container {
+    @media (min-width:$sm-break-point) {
+      display: flex;
+
+      div {
+        width: 50%;
+      }
+    }
+
+    @media (min-width:$m-break-point) {
+      align-items: center;
+    }
+  }
+
+  &__detail {
+    padding-bottom: 30px;
+
+    @media (min-width:$sm-break-point) {
+      padding-bottom: 0;
+      padding-right: 15px;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    p {
+      color: var(--grey);
+      margin-bottom: 25px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .header {
@@ -232,55 +277,21 @@ a {
 }
 
 .slider {
-  background-color: var(--light-blue);
   padding-top: var(--main-padding);
 
   @media (min-width:$m-break-point) {
     padding-top: 0;
   }
 
-  .container {
-    @media (min-width:$sm-break-point) {
-      display: flex;
+  background-color: var(--light-blue);
 
-      div {
-        width: 50%;
-      }
-    }
+  h1 {
+    color: var(--main-color);
+    font-size: 45px;
 
-    @media (min-width:$m-break-point) {
-      align-items: center;
-    }
-  }
-
-  &__detail {
-    padding-bottom: 30px;
-
-    h1 {
-      color: var(--main-color);
-      font-size: 50px;
-      font-weight: bold;
-      margin-bottom: 25px;
-
-      .break-line::after {
-        content: "\a";
-        white-space: pre;
-      }
-    }
-
-    p {
-      color: var(--grey);
-      margin-bottom: 25px;
-    }
-  }
-
-  &__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      max-width: 100%;
+    .break-line::after {
+      content: "\a";
+      white-space: pre;
     }
   }
 }
@@ -292,7 +303,6 @@ a {
   @media (min-width:$m-break-point) {
     padding: 0;
     transform: translateY(-50%);
-    ;
   }
 
   .container {
@@ -345,5 +355,50 @@ a {
         color: var(--white);
       }
     }
+  }
+}
+
+.about {
+  padding-bottom: var(--main-padding);
+
+  @media (min-width:$m-break-point) {
+    .special-section__detail {
+      width: 40%;
+      padding-right: 10px;
+    }
+
+    .special-section__img {
+      width: 60%;
+    }
+  }
+}
+
+.professional {
+  background-color: var(--light-blue);
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+
+  @media (min-width:$m-break-point) {
+    padding-top: 0;
+  }
+
+  .special-section__img {
+    display: none;
+  }
+
+  @media (min-width:$sm-break-point) {
+    padding-bottom: 0;
+
+    .special-section__img {
+      display: block;
+    }
+  }
+
+  .special-section__detail {
+    padding-bottom: 0;
+  }
+
+  h2 {
+    color: var(--main-color);
   }
 }
