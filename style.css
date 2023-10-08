@@ -32,8 +32,8 @@ a {
 }
 
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -97,21 +97,12 @@ a {
 .header__top {
   background: var(--black);
 }
-.header__top .container p {
-  width: 50%;
-  align-items: center;
-}
-@media (min-width: 992px) {
-  .header__top .container p:last-child {
-    display: flex;
-    justify-content: end;
-  }
+.header__top .container {
+  justify-content: space-between;
 }
 .header__top .container p a {
   color: var(--white);
-}
-.header__top .container p:first-child a {
-  padding-right: 10px;
+  display: block;
 }
 .header__top .container p i {
   color: var(--orange);
@@ -120,6 +111,18 @@ a {
 }
 .header__bottom {
   background-color: var(--light-blue);
+}
+.header__bottom #trigger {
+  display: none;
+}
+.header__bottom #trigger:checked + .container label i:first-child {
+  display: none;
+}
+.header__bottom #trigger:checked + .container label i:last-child {
+  display: block;
+}
+.header__bottom #trigger:checked + .container label + nav {
+  display: block;
 }
 .header__bottom .container {
   justify-content: space-between;
@@ -139,6 +142,12 @@ a {
 }
 .header__bottom .container label {
   cursor: pointer;
+  display: flex;
+}
+@media (min-width: 992px) {
+  .header__bottom .container label {
+    display: none;
+  }
 }
 .header__bottom .container label i {
   font-size: 30px;
@@ -146,54 +155,35 @@ a {
 .header__bottom .container label i:last-child {
   display: none;
 }
-.header__bottom .container ul {
+.header__bottom .container nav {
   width: 100%;
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20px;
+}
+@media (min-width: 992px) {
+  .header__bottom .container nav {
+    display: block;
+    margin-top: 0;
+  }
+}
+.header__bottom .container nav ul {
+  text-align: center;
   list-style: none;
   margin-top: 20px;
 }
 @media (min-width: 992px) {
-  .header__bottom .container ul {
+  .header__bottom .container nav ul {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin: 0;
+    margin-top: 0;
   }
 }
-.header__bottom .container ul a {
+.header__bottom .container nav ul a {
   display: block;
-  padding: 5px 5px;
+  padding: 10px 20px;
+  color: var(--black);
+}
+.header__bottom .container nav ul a.active, .header__bottom .container nav ul a:hover {
   color: var(--main-color);
-  font-size: 20px;
-}
-@media (min-width: 992px) {
-  .header__bottom .container ul a {
-    margin-left: 30px;
-  }
-}
-.header__bottom .container ul a.active {
-  color: var(--purple);
-}
-.header__bottom .container ul li:last-child a {
-  margin-bottom: 20px;
-}
-@media (min-width: 992px) {
-  .header__bottom .container ul li:last-child a {
-    margin-bottom: 0;
-  }
-}
-.header__bottom #trigger {
-  display: none;
-}
-.header__bottom #trigger:checked + .container label i:first-child {
-  display: none;
-}
-.header__bottom #trigger:checked + .container label i:last-child {
-  display: block;
-}
-.header__bottom #trigger:checked + .container label + ul {
-  display: flex;
 }/*# sourceMappingURL=style.css.map */

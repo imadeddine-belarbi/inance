@@ -38,8 +38,8 @@ a {
 }
 
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: auto;
   margin-right: auto;
 
@@ -108,24 +108,12 @@ a {
     background: var(--black);
 
     .container {
+      justify-content: space-between;
 
       p {
-        width: 50%;
-        align-items: center;
-
-        &:last-child {
-          @media (min-width:$m-break-point) {
-            display: flex;
-            justify-content: end;
-          }
-        }
-
         a {
           color: var(--white);
-        }
-
-        &:first-child a {
-          padding-right: 10px;
+          display: block;
         }
 
         i {
@@ -139,6 +127,24 @@ a {
 
   &__bottom {
     background-color: var(--light-blue);
+
+    #trigger {
+      display: none;
+
+      &:checked+.container label {
+        i:first-child {
+          display: none;
+        }
+
+        i:last-child {
+          display: block;
+        }
+
+        &+nav {
+          display: block;
+        }
+      }
+    }
 
     .container {
       justify-content: space-between;
@@ -158,6 +164,11 @@ a {
 
       label {
         cursor: pointer;
+        display: flex;
+
+        @media (min-width:$m-break-point) {
+          display: none;
+        }
 
         i {
           font-size: 30px;
@@ -168,61 +179,40 @@ a {
         }
       }
 
-      ul {
+      nav {
         width: 100%;
         display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
+
         margin-top: 20px;
 
         @media (min-width:$m-break-point) {
-          display: flex;
-          flex-direction: row;
-          justify-content: end;
-          margin: 0;
+          display: block;
+          margin-top: 0;
         }
 
-        a {
-          display: block;
-          padding: 5px 5px;
-          color: var(--main-color);
-          font-size: 20px;
+        ul {
+          text-align: center;
+          list-style: none;
+          margin-top: 20px;
 
           @media (min-width:$m-break-point) {
-            margin-left: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            margin-top: 0;
           }
 
-          &.active {
-            color: var(--purple);
+          a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--black);
+            // font-size: 16px;
+
+            &.active,
+            &:hover {
+              color: var(--main-color);
+            }
           }
-        }
-
-        li:last-child a {
-          margin-bottom: 20px;
-
-          @media (min-width:$m-break-point) {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-
-    #trigger {
-      display: none;
-
-      &:checked+.container label {
-        i:first-child {
-          display: none;
-        }
-
-        i:last-child {
-          display: block;
-        }
-
-        &+ul {
-          display: flex;
         }
       }
     }
