@@ -11,7 +11,7 @@
   --heading-font-family: 'Merriweather Sans', sans-serif;
   --txt-font-family: 'Lato', sans-serif;
 
-  --main-padding: 60px;
+  --main-padding: 40px;
 }
 
 $sm-break-point: 768px;
@@ -29,6 +29,15 @@ body {
   font-family: var(--txt-font-family);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+}
+
 a {
   text-decoration: none;
 }
@@ -38,8 +47,8 @@ a {
 }
 
 .container {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 
@@ -57,14 +66,16 @@ a {
 }
 
 .btn {
+  display: inline-block;
   padding: 10px 40px;
   text-transform: uppercase;
   border-width: 1px;
   border-style: solid;
   transition: .2s;
+  color: var(--white);
 
   &:hover {
-    background-color: var(--white);
+    background-color: transparent;
   }
 
   &--blue {
@@ -215,6 +226,60 @@ a {
           }
         }
       }
+    }
+  }
+}
+
+.slider {
+  background-color: var(--light-blue);
+  padding-top: var(--main-padding);
+
+  @media (min-width:$m-break-point) {
+    padding-top: 0;
+  }
+
+  .container {
+    @media (min-width:$sm-break-point) {
+      display: flex;
+
+      div {
+        width: 50%;
+      }
+    }
+
+    @media (min-width:$m-break-point) {
+      align-items: center;
+    }
+  }
+
+  &__detail {
+    padding-bottom: 30px;
+
+    h1 {
+      color: var(--main-color);
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 25px;
+
+      .break-line::after {
+        content: "\a";
+        white-space: pre;
+      }
+    }
+
+    p {
+      color: var(--grey);
+      margin-bottom: 25px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
     }
   }
 }
