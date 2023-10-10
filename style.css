@@ -248,11 +248,14 @@ a {
     padding-top: 0;
   }
 }
-.slider h1 {
+.slider .special-section__detail {
+  padding-bottom: 30px;
+}
+.slider .special-section__detail h1 {
   color: var(--main-color);
   font-size: 45px;
 }
-.slider h1 .break-line::after {
+.slider .special-section__detail h1 .break-line::after {
   content: "\a";
   white-space: pre;
 }

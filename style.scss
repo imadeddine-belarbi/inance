@@ -285,13 +285,17 @@ a {
 
   background-color: var(--light-blue);
 
-  h1 {
-    color: var(--main-color);
-    font-size: 45px;
+  .special-section__detail {
+    padding-bottom: 30px;
 
-    .break-line::after {
-      content: "\a";
-      white-space: pre;
+    h1 {
+      color: var(--main-color);
+      font-size: 45px;
+
+      .break-line::after {
+        content: "\a";
+        white-space: pre;
+      }
     }
   }
 }
@@ -370,7 +374,6 @@ a {
     }
 
     @media (min-width:$m-break-point) {
-
       width: 40%;
       padding-right: 10px;
     }
